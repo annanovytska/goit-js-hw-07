@@ -40,10 +40,10 @@ function onListItemClick(event) {
 }
 
 ////////////////////////////////////////////////////////////////////////
-// let instance;
+
 // document.addEventListener('keydown', onDocumentKeyDown);
 // function onDocumentKeyDown(event) {
 //   if (event.key === 'Escape') {
-//     instance.close();
+//     instance.close(()=> {});
 //   }
 // }
