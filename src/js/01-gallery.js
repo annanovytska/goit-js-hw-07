@@ -46,7 +46,7 @@ function onListItemClick(event) {
 let instance;
 document.addEventListener('keydown', onDocumentKeyDown);
 function onDocumentKeyDown(event) {
-  if (event.key === 'Escape') {
+  if (event.code === 'Escape') {
     instance.close();
   }
 }
