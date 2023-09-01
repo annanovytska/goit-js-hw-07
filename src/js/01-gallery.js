@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 const listItem = document.querySelector('.gallery');
 
 function galleryMarkup(array) {
-  return (markup = array
+  return array
     .map(el => {
       return `<li class="gallery__item">
   <a class="gallery__link" href="${el.original}">
@@ -17,7 +17,7 @@ function galleryMarkup(array) {
   </a>
 </li>`;
     })
-    .join(''));
+    .join('');
 }
 
 function renderGallery(array) {
