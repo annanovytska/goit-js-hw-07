@@ -34,16 +34,19 @@ function onListItemClick(event) {
     return;
   }
   const originalImg = event.target.dataset.source;
-  const instance = basicLightbox.create(`<img src="${originalImg}"/>`);
+  instance = basicLightbox.create(`<img src="${originalImg}"/>`, {
+    onClose: instance => {
+      return removeEventListener('keydown', onDocumentKeyDown);
+    },
+  });
 
   instance.show();
 }
 
-////////////////////////////////////////////////////////////////////////
-
-// document.addEventListener('keydown', onDocumentKeyDown);
-// function onDocumentKeyDown(event) {
-//   if (event.key === 'Escape') {
-//     instance.close(()=> {});
-//   }
-// }
+let instance;
+document.addEventListener('keydown', onDocumentKeyDown);
+function onDocumentKeyDown(event) {
+  if (event.key === 'Escape') {
+    instance.close();
+  }
+}
